@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { createStore, bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import store from 'Redux/store';
-import ACTIONS from 'Redux/actions';
+import store from 'Redux/index/store';
+import ACTIONS from 'Redux/index/actions';
 
 class Counter extends Component {
   constructor (props) {

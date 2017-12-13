@@ -62,6 +62,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-standard": "^3.0.1",
+    "electron-packager": "^10.1.0",
     "history": "^4.5.0",
     "webpack": "^1.13.3"
   },
@@ -69,7 +70,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run dev && electron .",
     "dev": "node ./build/dev.js",
-    "build": "node ./build/pro.js"
+    "build": "node ./build/pro.js",
+    "cs": "electron-packager ./ electron-react --all --out ./outPutApp --version 1.7.9  --overwrite"
   },
   "main": "main.js",
   "author": "",
