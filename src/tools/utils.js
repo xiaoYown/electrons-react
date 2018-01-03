@@ -1,5 +1,5 @@
 //Ajax的简单封装
-export function httpResponse(api,success,error) {
+export function httpResponse (api,success,error) {
     var _this=this;
     api.then(response => {
         success && success(response);
