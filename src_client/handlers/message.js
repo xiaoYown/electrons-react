@@ -2,10 +2,8 @@
 
 class MessageView {
   constructor () {
-      
   }
   bindShowMessage () {
-    
   }
 }
 

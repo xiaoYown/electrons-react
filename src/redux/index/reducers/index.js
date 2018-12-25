@@ -1,14 +1,14 @@
 import * as types from '../actions/types';
 import configDB from 'config/config_db';
-import indexedDB from 'tools/dbSrc';
+// import indexedDB from '@/utils/db-src';
 
-indexedDB.createStore(configDB.dbs.db_1.name, { key: 'name', val: 0 });
+// indexedDB.createStore(configDB.dbs.db_1.name, { key: 'name', val: 0 });
 
 const reducer = (state = { value:0 }, action) => {
 
   switch (action.type) {
     case types.INCREMENT:
-      console.log(indexedDB.getStore('name'));
+      // console.log(indexedDB.getStore('name'));
       return {
         value: state.value + 1
       }

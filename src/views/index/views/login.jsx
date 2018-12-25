@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import cookie from 'react-cookie';
 import PropTypes from 'prop-types';
-import { saveCookie } from 'tools/client';
+import { saveCookie } from '@/utils/client';
 
 class Login extends React.Component {
   constructor (props) {

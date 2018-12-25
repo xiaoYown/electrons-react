@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-router';
+// import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-router';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { render } from 'react-dom';
 
 import AppCmpt from '../App.jsx';
@@ -8,15 +9,15 @@ import userCmpt from './views/user.jsx';
 import loginCmpt from './views/login.jsx';
 import IndexnavCmpt from './mixin/nav.jsx';
 
-import { getCookie } from 'tools/client';
-import jQuery from 'jquery';
+import { getCookie } from '@/utils/client';
+// import jQuery from 'jquery';
 import config from 'config/config';
 
-require('sass/base.scss');
-require('sass/index.scss');
+require('@/assets/sass/base.scss');
+require('@/assets/sass/index.scss');
 
 // global.jQuery = global.$ = jQuery;
-const historyModel = config.end === 'cs' ? hashHistory : browserHistory;
+// const historyModel = config.end === 'cs' ? hashHistory : browserHistory;
 
 class Index extends React.Component {
   // constructor (props) {
@@ -35,6 +36,7 @@ class Index extends React.Component {
 
   // render之前调用，业务逻辑都应该放在这里，如对state的操作等
   componentWillMount () {
+    console.log('init');
   }
   // 渲染并返回一个虚拟DOM
   render () {
@@ -55,15 +57,13 @@ const requireAuth = (nextState, replace) => {
 };
 
 const routers = (
-  <AppCmpt>
-    <Router history={ historyModel }>
-      <Route path="/" component={ Index }>
-        <IndexRoute component={ homeCmpt } onEnter={ requireAuth }/>
-        <Route path="/login" component={ loginCmpt }/>
-        <Route path="/redux" component={ userCmpt }/>
-      </Route>
-    </Router>
-  </AppCmpt>
+  <Router>
+    <AppCmpt>
+      <Route exact path="/" component={ homeCmpt } onEnter={ requireAuth }/>
+      <Route exact path="/login" component={ loginCmpt }/>
+      <Route exact path="/redux" component={ userCmpt }/>
+    </AppCmpt>
+  </Router>
 );
 
 render(

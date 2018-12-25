@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, IndexLink } from 'react-router';
-import { getCookie, signOut } from 'tools/client';
+import { getCookie, signOut } from '@/utils/client';
 
 class nav extends Component {
   signOut () {
